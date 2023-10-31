@@ -1,0 +1,25 @@
+plugins {
+    id 'java'
+    id 'me.champeau.jmh' version '0.7.1'
+}
+
+dependencies {
+    jmh 'org.openjdk.jmh:jmh-core:1.37'
+    jmh 'org.openjdk.jmh:jmh-generator-annprocess:1.37'
+
+    implementation 'org.apache.shardingsphere:shardingsphere-jdbc-core:5.4.0'
+    implementation 'mysql:mysql-connector-java:8.0.30'
+    compileOnly 'org.projectlombok:1.18.28'
+    annotationProcessor 'org.projectlombok:lombok:1.18.28'
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+jmh {
+    jvmArgs = [
+    ]
+}
